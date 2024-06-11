@@ -1,0 +1,7 @@
+/* src/components/EbookList.css */
+.ebook-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
