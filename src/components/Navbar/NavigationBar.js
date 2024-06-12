@@ -1,38 +1,35 @@
-import React from "react";
-import { BrowserRouter as Router, Link, NavLink } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBookOpenReader } from "@fortawesome/free-solid-svg-icons";
-import "./navigationbar.css";
+import React from 'react';
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 
-const NavigationBar = () => {
-    const styleLink = ({ isActive }) => ({
-        color: isActive ? 'green' : 'inherit',
-        textDecoration: isActive ? 'underline' : 'none',
-    });
-
-    return (
-        <Router basename={process.env.PUBLIC_URL}>
-            <nav className="navigation-bar">
-                <Link to="/" className="logo">
-                    <FontAwesomeIcon icon={faBookOpenReader} size="2x" />
-                </Link>
-                <ul className="nav-links">
-                    <li>
-                        <NavLink to="/" style={styleLink}>Home</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/posts" style={styleLink}>Posts</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/users" style={styleLink}>Users</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/about" style={styleLink}>About</NavLink>
-                    </li>
-                </ul>
-            </nav>
-        </Router>
-    );
-};
+function NavigationBar() {
+  return (
+    <Navbar expand="lg" style={{ backgroundColor: '#343a40' }}>
+      <Container>
+        <Navbar.Brand href="#home" style={{ color: '#ffffff', fontSize: '1.5rem' }}>E-BOOK</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" style={{ borderColor: 'rgba(255, 255, 255, 0.1)' }} />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link href="#home" style={{ color: '#ffffff', fontSize: '1rem' }}>Home</Nav.Link>
+            <Nav.Link href="#link" style={{ color: '#ffffff', fontSize: '1rem' }}>Link</Nav.Link>
+            <NavDropdown title="Dropdown" id="basic-nav-dropdown" style={{ background: '#343a40' }}>
+              <NavDropdown.Item href="#action/3.1" style={{ color: '#ffffff' }}>Action</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.2" style={{ color: '#ffffff' }}>
+                Another action
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3" style={{ color: '#ffffff' }}>Category</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#action/3.4" style={{ color: '#ffffff' }}>
+                Separated link
+              </NavDropdown.Item>
+            </NavDropdown>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+  );
+}
 
 export default NavigationBar;
