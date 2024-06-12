@@ -1,33 +1,33 @@
 import React from "react";
-import { BrowserRouter as Router, Link, NavLink } from "react-router-dom"; // Ensure BrowserRouter is aliased as Router
+import { BrowserRouter as Router, Link, NavLink } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBookOpenReader } from "@fortawesome/free-solid-svg-icons";
 import "./navigationbar.css";
 
 const NavigationBar = () => {
-    const styleLink = ({ isActive }) => {
-        return {
-            color: isActive ? 'green' : "",
-            textDecoration: isActive ? "underline" : "",
-        };
-    };
+    const styleLink = ({ isActive }) => ({
+        color: isActive ? 'green' : 'inherit',
+        textDecoration: isActive ? 'underline' : 'none',
+    });
 
     return (
-        <Router basename={process.env.PUBLIC_URL}> {/* Set basename */}
+        <Router basename={process.env.PUBLIC_URL}>
             <nav className="navigation-bar">
-                <Link to="/">
-                    <h1>logo</h1>
+                <Link to="/" className="logo">
+                    <FontAwesomeIcon icon={faBookOpenReader} size="2x" />
                 </Link>
-                <ul>
+                <ul className="nav-links">
                     <li>
-                        <NavLink to="/" activeStyle={styleLink}>Home</NavLink>
+                        <NavLink to="/" style={styleLink}>Home</NavLink>
                     </li>
                     <li>
-                        <NavLink to="/posts" activeStyle={styleLink}>Posts</NavLink>
+                        <NavLink to="/posts" style={styleLink}>Posts</NavLink>
                     </li>
                     <li>
-                        <NavLink to="/users" activeStyle={styleLink}>Users</NavLink>
+                        <NavLink to="/users" style={styleLink}>Users</NavLink>
                     </li>
                     <li>
-                        <NavLink to="/about" activeStyle={styleLink}>About</NavLink>
+                        <NavLink to="/about" style={styleLink}>About</NavLink>
                     </li>
                 </ul>
             </nav>

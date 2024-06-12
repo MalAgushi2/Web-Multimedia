@@ -10,10 +10,10 @@ function App() {
     <div className="App">
       <NavigationBar/>
       <header className="App-header">
-        <h1>eBook Store</h1>
+        
       </header>
       <main>
-        <h2>Featured eBooks</h2>
+        
         <Multimedia/>
         <EbookList />
       </main>
