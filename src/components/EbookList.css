@@ -1,7 +1,61 @@
-/* src/components/EbookList.css */
-.ebook-list {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  
+.ebook-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  max-width: 1400px; /* Increased the max-width */
+  margin: auto;
+}
+
+.ebook-box {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  width: 100%; /* Adjust the width to ensure it takes the full width of the container */
+  background-color: #f9f9f9;
+  border: 1px solid #000;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.ebook-description {
+  flex: 1;
+  margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.ebook-description-item {
+  margin-bottom: 20px;
+}
+
+.ebook-description h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.ebook-description p {
+  font-size: 16px;
+  color: #555;
+}
+
+.ebook-cover {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200px; /* Ensure a consistent width for the ebook covers */
+}
+
+.ebook-cover img {
+  width: 100%; /* Adjust the width to make the images bigger */
+  height: auto;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.ebook-cover h3 {
+  font-size: 18px;
+  margin-top: 10px;
+  text-align: center;
+}

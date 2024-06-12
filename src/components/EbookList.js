@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import EbookCover from './EbookCover'; // Make sure this path is correct
-import EbookContent from './EbookContent'; // Import EbookContent here
+import EbookCover from './EbookCover'; // Ensure the path is correct
+import EbookContent from './EbookContent'; // Ensure the path is correct
 import './EbookList.css';
 
 const ebooks = [
@@ -48,24 +48,18 @@ const EbookList = () => {
 
   return (
     <div className="ebook-list-container">
-      <div className="ebook-list">
-        {ebooks.map((ebook) => (
-          <EbookCover
-            key={ebook.id}
-            coverImage={ebook.coverImage}
-            title={ebook.title}
-            onClick={() => handleEbookClick(ebook)}
-          />
-        ))}
-      </div>
-      <div className="ebook-description">
-        {ebooks.map((ebook) => (
-          <div key={ebook.id}>
+      {ebooks.map((ebook) => (
+        <div key={ebook.id} className="ebook-box">
+          <div className="ebook-description">
             <h3>{ebook.title}</h3>
             <p>{ebook.description}</p>
           </div>
-        ))}
-      </div>
+          <div className="ebook-cover" onClick={() => handleEbookClick(ebook)}>
+            <img src={ebook.coverImage} alt={ebook.title} />
+            <h3>{ebook.title}</h3>
+          </div>
+        </div>
+      ))}
     </div>
   );
 };

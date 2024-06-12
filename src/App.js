@@ -4,6 +4,7 @@ import './App.css';
 import EbookList from './components/EbookList';
 import NavigationBar from './components/Navbar/NavigationBar';
 import Multimedia from './components/Multimedia/Multimedia';
+import TextMultimedia from './TextMultimedia/TextMultimedia';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <main>
         
         <Multimedia/>
+        <TextMultimedia/>
         <EbookList />
       </main>
     </div>
